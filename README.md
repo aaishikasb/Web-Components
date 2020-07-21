@@ -23,3 +23,7 @@ This repository consists of elements that you can add in your website built with
 | Component Name | Description | File |
 |---------|-------------|-------------|
 | Camera Snapper | Snap Camera feed with the click of a Button | [camera-snapper.html](camera-snapper.html) |
+
+## Contributing
+
+Feel free to add to this repository! Pull requests are appreciated!
