@@ -23,6 +23,8 @@ This repository consists of elements that you can add in your website built with
 | Component Name | Description | File |
 |---------|-------------|-------------|
 | Camera Snapper | Snap Camera feed with the click of a Button | [camera-snapper.html](camera-snapper.html) |
+| Custom Click Menu | Custom Menu on clicking Right Mouse Button | [custom-click-menu.html](custom-click-menu.html) |
+| Custom Scrollbar | Custom Scrollbar for Webpage | [custom-scrollbar.html](custom-scrollbar.html) |
 
 ## Contributing
 

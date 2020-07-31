@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Custom Click Menu</title>
+    <style>
+        #menu {
+            background: #0c0f16;
+            border-radius: 15px;
+            padding: 5px;
+            position: fixed;
+            user-select: none;
+            display: none;
+            flex-direction: column;
+            min-width: 300px;
+        }
+        .show {
+            display: flex;
+        }
+        .seperator {
+            height: 2px;
+            margin: 7.5px 5px;
+            border-radius: 1px;
+            background-color: aliceblue;
+        }
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #0c0f16;
+            border-radius: 10px;
+        }
+        button.section-container {
+            font-weight: 300;
+            font-size: 15px;
+            color: #fff;
+            background: transparent;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 15px 30px;
+            margin: 5px;
+        }
+        button.section-container:hover 
+        {
+            cursor: pointer;
+            background: linear-gradient(115deg, rgb(52, 72, 252), rgb(33, 201, 243))
+        }
+    </style>
+</head>
+<body>
+        <ul style="background-color:crimson" class="nav">
+                <h1 style="color:white">Custom Click Menu</h1>
+        </ul>
+    <!-- Custom Click Menu -->
+    <div id="menu" class="show">
+        <div class="section-container">
+            <button onclick="onBack()">Back</button>
+            <button onclick="onForward()">Forward</button>
+            <button onclick="onReload()">Reload</button>
+            <div class="seperator"></div>
+            <button onclick="onClose()">Close</button>
+        </div>
+    </div>
+    <script>
+        const contMenu = document.getElementById('menu');
+        const width = contMenu.offsetWidth, height = contMenu.offsetHeight;
+        contMenu.classList.remove('show');
+        document.addEventListener('contmenu', event => {
+            event.preventDefault();
+            const padding = 10;
+            let x = event.clientX, y = event.clientY;
+            //Overflow
+            if (x<padding) x = padding;
+            let maxX = window.innerWidth - width - padding
+            if (x>maxX) x = maxX;
+            if (y<padding) y = padding;
+            let maxY = window.innerHeight - height - padding
+            if (y>maxY) y = maxY;
+            contMenu.style.left = '${ x }px';
+            contMenu.style.top = '${ y }px';
+            contMenu.classList.add('show');
+        });
+        </script>
+        <script>
+        function onBack() {
+            window.history.back()
+        }
+        function onForward() {
+            window.history.forward()
+        }
+        function onReload() {
+            location.reload()
+        }
+        function onClose() {
+            contMenu.classList.remove('show')
+        }
+    </script>
+</body>
+</html>
