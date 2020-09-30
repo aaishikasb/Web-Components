@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Night Sky Header Animation with Pure CSS">
+    <meta name="keywords" content="HTML & Pure CSS">
+    <meta name="author" content="Arnab Deep">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Sky Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+
+    <!-- Styling -->
+    <style>
+        /* resetting margins & paddings */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* making a container for all the stuffs */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* heading */
+        h2 {
+            color: transparent;
+            font-weight: 900;
+            font-size: 6rem;
+            -webkit-text-stroke: 2px #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive Heading */
+        @media screen and (max-width: 1000px) {
+            h2 {
+                font-size: 4rem;
+                -webkit-text-stroke: 1px #fff;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            h2 {
+                font-size: 2rem;
+                -webkit-text-stroke: 1px #fff;
+            }
+        }
+
+        /* Clouds Container */
+        .container .clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* Animation for each individual cloud image  */
+        .container .clouds img {
+            position: absolute;
+            bottom: 0;
+            max-width: 100%;
+            animation: cloud-motion calc(8s * var(--i)) linear infinite;  
+        }
+
+        @keyframes cloud-motion {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Star Animation starts */
+        /* Container for each individual star image */
+        .container .star {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            animation: blink-star 4s ease-in-out infinite,
+            star-move 8s linear infinite;
+        }
+
+        /* Delayed animation by 1s for each image  */
+        .container .star .star1 {
+            animation-delay: 0s;
+        }
+
+        .container .star .star2 {
+            animation-delay: -1s;
+        }
+
+        .container .star .star3 {
+            animation-delay: -2s;
+        }
+
+        .container .star .star4 {
+            animation-delay: -3s;
+        }
+
+        .container .star .star5 {
+            animation-delay: -4s;
+        }
+
+        .container .star .star6 {
+            animation-delay: -5s;
+        }
+
+        .container .star .star7 {
+            animation-delay: -6s;
+        }
+
+        .container .star .star8 {
+            animation-delay: -7s;
+        }
+
+        /* Blinking of Stars Animation */
+        @keyframes blink-star {
+
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            100% {
+                opacity: 0.5;
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                opacity: 1;
+            }
+        }
+
+        /* Moving of Stars */
+        @keyframes star-move {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h2>Hacktober Fest'20</h2>
+        <!-- Star Container -->
+        <div class="star">
+            <img class="star1" src="./images/night-sky-header/stars/star1.png">
+            <img class="star2" src="./images/night-sky-header/stars/star2.png">
+            <img class="star3" src="./images/night-sky-header/stars/star3.png">
+            <img class="star4" src="./images/night-sky-header/stars/star4.png">
+            <img class="star5" src="./images/night-sky-header/stars/star5.png">
+            <img class="star6" src="./images/night-sky-header/stars/star6.png">
+            <img class="star7" src="./images/night-sky-header/stars/star7.png">
+            <img class="star8" src="./images/night-sky-header/stars/star8.png">
+        </div>
+        <!-- Cloud Container  -->
+        <div class="clouds">
+            <img src="./images/night-sky-header/clouds/cloud1.png" style="--i:1">
+            <img src="./images/night-sky-header/clouds/cloud2.png" style="--i:2">
+            <img src="./images/night-sky-header/clouds/cloud3.png" style="--i:3">
+            <img src="./images/night-sky-header/clouds/cloud4.png" style="--i:4">
+            <img src="./images/night-sky-header/clouds/cloud5.png" style="--i:5">
+        </div>
+    </div>
+</body>
+
+</html>
