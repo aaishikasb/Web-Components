@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080808 !important;
+  color: white !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dc143c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+p {
+  font-size: 1.5em;
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  background: #dc143c;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 20px 0px 20px;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.header .progress-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 8px;
+  background: white;
+}
+
+.header .progress-bar {
+  height: 8px;
+  background: #14dc46;
+  width: 0%;
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=custom-scrollbar.css.map */
